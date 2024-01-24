@@ -1,0 +1,161 @@
+<style>
+    .registration-form {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: rgba(173, 170, 170, 0.8);
+      padding: 20px;
+      margin-top: 10px;
+    }
+    .logo-image {
+      display: inline-block;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-image: url('logo-image.jpg'); /* Replace with your desired logo image */
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 20px; /* Add margin bottom to create space below the logo */
+    }
+  </style>
+  <body>
+<div class="container">
+
+      <h2 class="text-center mt-5">CIVE STUDENT REGISTRATION FORM</h2>
+      <!-- <div class="logo-image"></div> Add the logo image container here   -->
+<form class="registration-form">
+    <div class="form-group mb-3">
+      <label for="firstname" class="form-label">FirstName</label>
+      <input type="text" [(ngModel)]="firstname" [ngModelOptions]="{standalone: true}"  class="form-control" id="firstame" placeholder="Enter FirstName">
+    </div>
+ 
+    <div class="form-group mb-3">
+        <label for="middlename" class="form-label">MiddleName</label>
+        <input type="text" class="form-control"  [(ngModel)]="middlename" [ngModelOptions]="{standalone: true}" id="middlename" placeholder="Enter MiddleName">
+      </div>
+ 
+      <div class="form-group mb-3">
+        <label for="lastname" class="form-label">Lastname</label>
+        <input type="text" class="form-control" [(ngModel)]="lastname" [ngModelOptions]="{standalone: true}" id="lastname" placeholder="Enter LastName">
+      </div>
+      <div class="mb-3">
+        <label for="gender" class="form-label">Gender</label>
+        <select class="form-select" id="gender"  [(ngModel)]="gender" [ngModelOptions]="{standalone: true}" required>
+            <option value="">Select your gender</option>
+            <option value="MALE">MALE</option>
+            <option value="FEMALE">FEMALE</option>
+          </select>
+        
+      </div>
+      <div class="form-group mb-3">
+        <label for="program" class="form-label">Program</label>
+        <!-- <input type="text" [(ngModel)]="gender" [ngModelOptions]="{standalone: true}"  class="form-control" id="gender" placeholder="Enter Gender"> -->
+        <select class="form-select" [(ngModel)]="program" [ngModelOptions]="{standalone: true}" id="program" required>
+            <option value="">Select your Program</option>
+            <option value="Bachelor of Science in Computer Engineering (BSc CE)">Bachelor of Science in Computer Engineering (BSc CE)</option>
+            <option value="Bachelor of Science in Computer Science (BSc CS)"> Bachelor of Science in Computer Science (BSc CS)</option>
+            <option value="Bachelor of Science in Software Engineering (BSc SE)">Bachelor of Science in Software Engineering (BSc SE)</option>
+            <option value="Bachelor of Science in Cyber Security and Digital Forensics (BSc CSDFE)">Bachelor of Science in Cyber Security and Digital Forensics (BSc CSDFE)</option>
+            <option value="Bachelor of Science in Business Information Systems (BSc BIS)">Bachelor of Science in Business Information Systems (BSc BIS) </option>
+            <option value="Bachelor of Science in Health Information Systems (BSc HIS)">Bachelor of Science in Health Information Systems (BSc HIS)</option>
+            <option value="Bachelor of Science in Information Systems (BSc IS)">Bachelor of Science in Information Systems (BSc IS)</option>
+            <option value="Bachelor of Science in Instructional Design and Information Technology (BSc
+            IDIT)"> Bachelor of Science in Instructional Design and Information Technology (BSc
+                IDIT)</option>
+            <option value="Bachelor of Science in Multimedia Technology and Animation (BSc MTA)">Bachelor of Science in Multimedia Technology and Animation (BSc MTA)</option>
+            
+            <option value="Bachelor of Science in Telecommunications Engineering (BSc TE)">Bachelor of Science in Telecommunications Engineering (BSc TE)</option>
+           
+            <option value="Bachelor of Science in Digital Content and Broadcasting Engineering (BSc
+            DCBE)">Bachelor of Science in Digital Content and Broadcasting Engineering (BSc
+                DCBE)</option>
+           
+                <option value="Bachelor of Science in Computer Networks and Information Security 
+                Engineering (BSc CNISE)"> Bachelor of Science in Computer Networks and Information Security 
+                    Engineering (BSc CNISE)</option>    
+            
+            <option value="Diploma in Cyber Security and Digital Forensics (Dip. CSDF)">Diploma in Cyber Security and Digital Forensics (Dip. CSDF)</option>
+
+            <option value="Diploma in Educational Technology (Dip. ET)">Diploma in Educational Technology (Dip. ET)</option>
+
+            <option value="Diploma in Information and Communication Technology (Dip. ICT)">Diploma in Information and Communication Technology (Dip. ICT)</option>
+          </select>
+        
+      </div>
+   
+        <div class="form-group mb-3">
+          <label for="year_study" class="form-label">Year Of Study</label>
+          <select class="form-select" [(ngModel)]="year_study" [ngModelOptions]="{standalone: true}" id="year_study" required>
+            <option value="">Select Year of Study</option>
+            <option value="First Year">First Year</option>
+            <option value="Second Year">Second Year</option>
+            <option value="Third Year">Third Year</option>
+            <option value="Fourth Year">Fourth Year</option>
+          </select>
+        </div>
+
+
+        <div class="form-group mb-3">
+            <label for="college_name" class="form-label">College Name</label>
+            <select class="form-select" [(ngModel)]="college_name" [ngModelOptions]="{standalone: true}" id="college_name" required>
+              <option value="">Select Your College Name</option>
+              <option value="The College of Informatics and Virtual Education (CIVE)">The College of Informatics and Virtual Education (CIVE)</option>
+            </select>
+          </div>
+
+
+     
+          <div class="form-group mb-3">
+            <label for="department_name" class="form-label">Department Name</label>
+            <select class="form-select" [(ngModel)]="department_name" [ngModelOptions]="{standalone: true}" id="department_name" required>
+                <option value="">Select Your Department Name</option>
+                <option value="Department of Electronics and Telecommunications Engineering (ETE)">Department of Electronics and Telecommunications Engineering (ETE)</option>
+
+                <option value="Department of Computer Science and Engineering (DoCS&E)">Department of Computer Science and Engineering (DoCS&E)</option>
+
+                <option value="Department of Information Systems and Technology (DIS&T)">Department of Information Systems and Technology (DIS&T)</option> 
+              </select>
+          </div>
+
+    <button type="submit" (click)="save()" class="btn btn-primary btn-block">Submit</button>
+  </form>
+</div>
+
+
+<div class="container mt-4" >
+    <h3>STUDENT REGISTRATION TABLE</h3>
+    <table class="table table-bordered table-hover">
+      <thead class="thead-dark">    
+      <tr>
+          <th scope="col">FirstName</th>
+          <th scope="col">MiddleName</th>
+          <th scope="col">LastName</th>  
+          <th scope="col">Gender</th>
+          <th scope="col">Program</th>
+          <th scope="col">Year Study</th>  
+          <th scope="col">College Name</th>
+          <th scope="col">Department</th>
+          <th scope="col">Option</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let StudentItem of StudentArray">
+          <td>{{StudentItem.firstname  | uppercase}}</td>
+          <td>{{StudentItem.middlename  | uppercase}}</td>
+          <td>{{StudentItem.lastname  | uppercase}}</td>
+          <td>{{StudentItem.gender | uppercase  }}</td>
+          <td>{{StudentItem.program | uppercase }}</td>
+          <td>{{StudentItem.year_study | uppercase  }}</td>
+          <td>{{StudentItem.college_name | uppercase }}</td>
+          <td>{{StudentItem.department_name | uppercase }}</td>
+          <td>
+            <button type="button" class="btn btn-success btn-sm mb-2" (click)="setUpdate(StudentItem)">Edit</button>
+            <button type="button" class="btn btn-danger btn-sm"  (click)="setDelete(StudentItem)">Delete</button>            
+          </td>
+        </tr>          
+      </tbody>
+    </table>
+     
+    </div>
+
+
+
